@@ -5,8 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ShowImage } from "./ShowImage";
 
-export default function Page() {
-  const [data, setData] = useState<ListItem[]>([])
+export default function ListSearch() {
+  const [data, setData] = useState<ListItem[]>([]);
   const [select, setSelect] = useState<ListType>("books");
   const [target, setTarget] = useState<string>("");
 
@@ -15,7 +15,7 @@ export default function Page() {
 
   useEffect(() => {
     list.get(select).then((data) => {
-      setData(data)
+      if(data) setData(data)
     })
   }, [])
 

@@ -26,7 +26,7 @@ export default function Page() {
 
   useEffect(() => {
     list.getItem(id, type as ListType).then((data) => {
-      setItem(data)
+      if(data) setItem(data)
     })
   }, [])
 

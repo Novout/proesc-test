@@ -18,17 +18,17 @@ export default function Page() {
   const id = searchParams.get('id')
   const type = searchParams.get('type')
 
+  useEffect(() => {
+    list.getItem(id as string, type as ListType).then((data) => {
+      if(data) setItem(data)
+    })
+  })
+
   if(!id || !type) {
     router.back()
 
     return
   }
-
-  useEffect(() => {
-    list.getItem(id, type as ListType).then((data) => {
-      if(data) setItem(data)
-    })
-  }, [])
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function Page() {
                   if(!value || value?.length === 0) return (<></>)
 
                   return (
-                    <div className="flex gap-10 py-5 text-lg items-center w-full">
+                    <div key={item.id} className="flex gap-10 py-5 text-lg items-center w-full">
                       {list.getKeyName(key)}:
                       <p className="text-xl text-purple-500 hover:text-green-400">
                         {value}

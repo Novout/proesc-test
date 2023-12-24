@@ -19,6 +19,7 @@ export interface BookItem extends Item {
     summary: string
     title: string
     wiki: string
+    [key: string]: any
   }>
   relationships: {
     chapters: {
@@ -35,6 +36,7 @@ export interface CharacterItem extends Item {
     wiki: string
     family_members: string[]
     gender: string
+    [key: string]: any
   }>
 }
 
@@ -45,6 +47,7 @@ export interface MovieItem extends Item {
     wiki: string
     family_members: string[]
     gender: string
+    [key: string]: any
   }>
 }
 
@@ -62,6 +65,7 @@ export interface SpellItem extends Item {
     slug: string
     time: string
     wiki: string
+    [key: string]: any
   }>
 }
 
@@ -78,6 +82,7 @@ export interface PotionItem extends Item {
     name: string
     slug: string
     wiki: string
+    [key: string]: any
   }>
 }
 

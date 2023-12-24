@@ -17,7 +17,7 @@ export default function ListSearch() {
     list.get(select).then((data) => {
       if(data) setData(data)
     })
-  }, [])
+  })
 
   const renderList = useMemo(() => {
     return data.filter(item => {
@@ -29,7 +29,7 @@ export default function ListSearch() {
 
       return item.attributes[key].trim().toLowerCase().includes(input)
     })
-  }, [target, data])
+  }, [target, data, list, select])
 
   const onItemProfile = (item: ListItem) => {
     router.push(`/item?id=${item.id}&type=${select}`)

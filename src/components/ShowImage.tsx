@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { IconWizard } from "./icons/IconWizard"
 
-export const ShowImage = (props) => {
+export const ShowImage = (props: { attributes: { [key: string]: any }}) => {
   return (
     <>
       {props.attributes.cover && <Image 
